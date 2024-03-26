@@ -32,7 +32,7 @@ const Main = () => {
                     {category.meals.map((meal) => (
                       <div className="Meal" key={meal.id}>
                         <h2>{meal.title}</h2>
-                        {/* Placez les deux balises <p> ici, après la balise <h2> */}
+
                         <p>{meal.description}</p>
                         <p>{meal.price}€</p>
                         {/* Utilisez une expression conditionnelle pour afficher l'image uniquement si meal.picture est défini */}
