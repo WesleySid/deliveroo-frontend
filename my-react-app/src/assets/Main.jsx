@@ -3,7 +3,11 @@ import axios from "axios";
 
 const Main = () => {
   const [categories, setCategories] = useState([]);
+  const [panier, setPanier] = useState([]);
 
+  const addPanier = (meal) =>
+    setPanier([...panier, { title: meal.title, price: meal.price }]);
+  const fraisLivr = 2.5;
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -18,36 +22,73 @@ const Main = () => {
   }, []);
 
   return (
-    <section>
-      <div className="container">
-        <div className="Menu">
-          {categories.map(
-            (category) =>
-              // Vérifiez avant de l'afficher
-              category.meals &&
-              category.meals.length > 0 && (
-                <div className="Category" key={category.name}>
-                  <h1>{category.name}</h1>
-                  <div className="Meals">
-                    {category.meals.map((meal) => (
-                      <div className="Meal" key={meal.id}>
-                        <h2>{meal.title}</h2>
+    <>
+      <main>
+        <section className="col-left">
+          <div className="container">
+            <div className="Menu">
+              {categories.map(
+                (category) =>
+                  // Vérifiez avant de l'afficher
+                  category.meals &&
+                  category.meals.length > 0 && (
+                    <div className="Category" key={category.name}>
+                      <h1>{category.name}</h1>
+                      <div className="Meals">
+                        {category.meals.map((meal) => (
+                          <div
+                            className="Meal"
+                            key={meal.id}
+                            onClick={() => addPanier(meal)}
+                          >
+                            <div className="Meal-desc">
+                              <h2>{meal.title}</h2>
 
-                        <p>{meal.description}</p>
-                        <p>{meal.price}€</p>
-                        {/* Utilisez une expression conditionnelle pour afficher l'image uniquement si meal.picture est défini */}
-                        {meal.picture && (
-                          <img src={meal.picture} alt={meal.title} />
-                        )}
+                              <p>{meal.description}</p>
+                              <span>{meal.price}€</span>
+                              {meal.popular && (
+                                <span className="populaire">
+                                  ⭐️ Populaire{" "}
+                                </span>
+                              )}
+                            </div>
+
+                            {meal.picture && (
+                              <img src={meal.picture} alt={meal.title} />
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )
+              )}
+            </div>
+          </div>
+        </section>
+        <section className="col-right">
+          <div className="panier">
+            <button>Valider mon panier</button>
+            <div className="resume-panier">
+              {panier.length === 0 ? (
+                <p>Votre panier est vide </p>
+              ) : (
+                <div className="Panier-full">
+                  <div>
+                    {panier.map((item, index) => (
+                      <div key={index}>
+                        {item.title} {item.price}€
                       </div>
                     ))}
                   </div>
+                  <div className="sous-total">sous total </div>
+                  <div className="total">total {fraisLivr}€ </div>
                 </div>
-              )
-          )}
-        </div>
-      </div>
-    </section>
+              )}
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 };
 

@@ -30,7 +30,7 @@ const Header = () => {
           <>
             <div className="infoText">
               <h1>{restaurantInfo.name}</h1>
-              <p>{restaurantInfo.description}</p>
+              <p className="head">{restaurantInfo.description}</p>
             </div>
             <img src={restaurantInfo.picture} alt={restaurantInfo.name} />
           </>

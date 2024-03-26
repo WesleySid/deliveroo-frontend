@@ -3,10 +3,15 @@ p {
   color: #8e9090;
   font-size: 14px;
 }
+p.head {
+  font-size: 19px;
+  margin: 50px;
+}
 
 h2 {
   font-size: 20px;
 }
+
 /* Styles pour l'en-tête */
 header {
   display: flex;
@@ -18,7 +23,7 @@ header {
 /* Styles pour la section */
 section {
   background-color: #f2f5f5;
-  padding-left: 170px;
+  padding-left: 120px;
 }
 
 /* Styles pour les titres avec la classe 'deli' */
@@ -30,7 +35,6 @@ h1.deli {
 
 /* Styles pour les titres h1 */
 h1 {
-  margin: 20px;
   font-size: 32px; /* Taille de la police */
   font-weight: bold;
 }
@@ -54,6 +58,7 @@ div.Meals img {
   height: 130px;
   width: 130px;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 /* Styles pour 'Meals' */
@@ -68,7 +73,7 @@ div.Meals {
 div.Category {
   display: flex;
   margin: 50px;
-  align-items: center;
+
   flex-direction: column;
 }
 
@@ -83,7 +88,6 @@ div.Menu {
 .container {
   background-color: #f2f5f5;
   padding: 20px;
-  margin: 20px;
 }
 
 /* Styles pour 'Meal' */
@@ -98,4 +102,54 @@ div.Meal {
   width: calc(50% - 20px);
   box-sizing: border-box;
   height: 1;
+}
+div.Meal-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+div.Meal-desc p {
+  height: 28px;
+  overflow: hidden;
+}
+span {
+  font-size: 18px;
+}
+span.populaire {
+  color: #ff8001;
+}
+.col-left {
+  /* background-color: red; */
+  width: 60%;
+}
+
+.col-right {
+  height: 2000px;
+
+  width: 40%;
+}
+main {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f2f5f5;
+}
+div.panier {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  margin-right: 230px;
+  margin-top: 100px;
+  height: 200px;
+  width: 300px;
+  border-radius: 10px;
+}
+button {
+  width: 280px;
+  height: 50px;
+  border-radius: 5px;
+  border-style: none;
+  font-size: 18px;
 }
