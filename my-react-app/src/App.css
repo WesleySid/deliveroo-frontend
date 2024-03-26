@@ -18,6 +18,7 @@ header {
 /* Styles pour la section */
 section {
   background-color: #f2f5f5;
+  padding-left: 170px;
 }
 
 /* Styles pour les titres avec la classe 'deli' */
