@@ -1,0 +1,101 @@
+/* Styles pour les paragraphes */
+p {
+  color: #8e9090;
+  font-size: 14px;
+}
+
+h2 {
+  font-size: 20px;
+}
+/* Styles pour l'en-tête */
+header {
+  display: flex;
+  border-bottom: solid 1px lightgrey;
+  margin-left: 240px;
+  background-color: white;
+}
+
+/* Styles pour la section */
+section {
+  background-color: #f2f5f5;
+  padding-left: 170px;
+}
+
+/* Styles pour les titres avec la classe 'deli' */
+h1.deli {
+  font-size: 26px;
+  color: #00ccbc;
+  font-weight: bold;
+}
+
+/* Styles pour les titres h1 */
+h1 {
+  margin: 20px;
+  font-size: 32px; /* Taille de la police */
+  font-weight: bold;
+}
+
+/* Styles pour le conteneur 'restauInfo' */
+div.restauInfo {
+  display: flex;
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 96vw;
+}
+
+/* Styles pour les images à l'intérieur de 'restauInfo' */
+div.restauInfo img {
+  height: 200px;
+}
+
+/* Styles pour les images à l'intérieur de 'Meals' */
+div.Meals img {
+  height: 130px;
+  width: 130px;
+  object-fit: cover;
+}
+
+/* Styles pour 'Meals' */
+div.Meals {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante */
+  justify-content: space-between; /* Espacement égal entre les éléments */
+  margin-top: 20px; /* Espacement entre les catégories */
+}
+
+/* Styles pour 'Category' */
+div.Category {
+  display: flex;
+  margin: 50px;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Styles pour 'Menu' */
+div.Menu {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+}
+
+/* Styles pour le conteneur principal 'container' */
+.container {
+  background-color: #f2f5f5;
+  padding: 20px;
+  margin: 20px;
+}
+
+/* Styles pour 'Meal' */
+div.Meal {
+  display: flex;
+
+  background-color: #fff;
+
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: calc(50% - 20px);
+  box-sizing: border-box;
+  height: 1;
+}
